@@ -1,33 +1,30 @@
-
 package oldshelf;
 
 public class Fiction extends Book {
 
-	
-	private String name;
+   
+    private String name;
 
-	// type is a per-instance object and it is initialized only once (static means it's shared across all instances)
-	private     FictionType type;
+    // FictionType is a per-instance object, so it should not be static.
+    private final FictionType type;
 
-   // type remains static for all instances
-	public Fiction(String title, String name, FictionType type) {
-		super(title); 
-		this.name = name;
-		Fiction.type = type;  // Since type is static, it is shared and initialized once
-	}
+   
+    public Fiction(String title,String name, FictionType type) {
+        super(title);  
+        this.name = name;  
+        this.type = type;   
+    }
 
-	
-	public String getName() {
-		return name;
-	}
+   
+    public FictionType getType() {
+        return this.type;
+    }
+    public String getName() {
+        return this.name;
+    }
 
-	public static FictionType getType() {
-		return type;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Fiction [name=" + name + ", type=" + type + ", title=" + getTitle() + "]";
-	}
+    @Override
+    public String toString() {
+        return "Fiction{name='" + name + "', type=" + type + "}";
+    }
 }
