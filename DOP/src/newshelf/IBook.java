@@ -1,5 +1,5 @@
 package newshelf;
 
-public interface IBook {
+public sealed interface IBook permits Ncomic, Nfiction, NtextBook ,NfictionType{
 
 }
