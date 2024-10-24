@@ -2,22 +2,23 @@ package oldshelf;
 
 public class TextBook extends Book {
 
-	// TODO: Make this a final field with most strict visiibility possible.
-	String subject;
+
+	private final String subject;
+
 	
-	// TODO: Change the constructor if required? Correct any errors
 	public TextBook(String subject) {
-		super(subject);
+		super(subject);  // Call to parent constructor with the subject as the title
+		this.subject = subject;
 	}
 
-	// TODO : create a getter if required.
-	
-	// TODO: Create a setter if required
-	
-	// TODO: write a toString method
+
+	public String getSubject() {
+		return subject;
+	}
+
 	@Override
 	public String toString() {
-		return null;
+		return "TextBook [subject=" + subject + "]";
 	}
-
 }
+

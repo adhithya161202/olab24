@@ -1,35 +1,46 @@
 package oldshelf;
 
-public class Comic extends Book {
+import java.util.*;
 
-	/* TODO: Add most strict modifiers here*/ String Title;
-
-	// TODO: Warning to be removed.
+public class Comic extends Book {  
 	private final int ageOfMainCharacter;
 
-	// TODO Correct the error
-	public Comic() {
+	public Comic(String title, int ageOfMainCharacter) {
+		super(title);  
+		this.ageOfMainCharacter = ageOfMainCharacter;
 	}
-	
-	// TODO : create a getter if required.
-	
-	// TODO: Create a setter if required
 
-	// TODO: write a toString method
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getAgeOfMainCharacter() {
+		return ageOfMainCharacter;
+	}
+
+	
 	@Override
 	public String toString() {
-		return null;
+		return "Comic [title=" + title + ", ageOfMainCharacter=" + ageOfMainCharacter + "]";
 	}
 
-	// TODO: Bonus: 
+	
 	@Override
 	public int hashCode() {
-		// TODO: Fill up an arbitrary hash method that takes into account only the age of main characted and the Strign title
+		return Objects.hash(title, ageOfMainCharacter);  
 	}
-	
-	// TODO: Bonus: 
+
 	@Override
 	public boolean equals(Object o) {
-		// TODO: Based on the information about hashCode write the equals method.
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Comic comic = (Comic) o;
+		return ageOfMainCharacter == comic.ageOfMainCharacter && Objects.equals(title, comic.title);
 	}
 }
+
