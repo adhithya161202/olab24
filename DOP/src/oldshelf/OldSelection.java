@@ -32,7 +32,7 @@ public class OldSelection {
 		
 		TextBook text = new TextBook("chemistry");
 		Comic comics = new Comic("superman",40);
-		Fiction fic = new Fiction("", "Benyamin", FictionType.Tragedy);
+		Fiction fic = new Fiction("Goatlife", "Benyamin", FictionType.Tragedy);
 
 		
 		System.out.println(getAgeOrTitle(text));  
