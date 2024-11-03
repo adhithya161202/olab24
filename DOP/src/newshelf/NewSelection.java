@@ -18,27 +18,26 @@ public class NewSelection {
 //         }
 //         return "";  
 //     }
-public static String getAgeOrTitle(Object o) {
-    return switch (o) {
-        case Ncomic comic when comic.title() != null -> comic.title();
-        case Nfiction fiction when fiction.name() != null -> fiction.name();
-        case NtextBook textBook when textBook.subject() != null -> textBook.subject();
-        case IBook book when !(book instanceof Ncomic || book instanceof Nfiction || book instanceof NtextBook) -> 
-            "";
-        default -> "";
-    };
-}
 // public static String getAgeOrTitle(Object o) {
 //     return switch (o) {
-//         case Ncomic(String title) when title != null -> title;
-//         case Nfiction(String name,String author,NfictionType type) when name != null -> name;
-//         case NtextBook(String subject) when subject != null -> subject;
+//         case Ncomic comic when comic.title() != null -> comic.title();
+//         case Nfiction fiction when fiction.name() != null -> fiction.name();
+//         case NtextBook textBook when textBook.subject() != null -> textBook.subject();
 //         case IBook book when !(book instanceof Ncomic || book instanceof Nfiction || book instanceof NtextBook) -> 
 //             "";
 //         default -> "";
 //     };
 // }
-
+public static String getAgeOrTitle(Object o) {
+    return switch (o) {
+        case Ncomic(String title) when title != null -> title;
+        case Nfiction(String name,String author,NfictionType type) when name != null -> name;
+        case NtextBook(String subject) when subject != null -> subject;
+        case IBook book when !(book instanceof Ncomic || book instanceof Nfiction || book instanceof NtextBook) -> 
+            "";
+        default -> "";
+    };
+}
 
     public static void main(String[] args) {
      
