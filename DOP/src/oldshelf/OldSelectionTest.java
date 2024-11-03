@@ -13,7 +13,7 @@ class OldSelectionTest {
 
     @Test
     void testGetAgeOrTitle_SomeObject() {
-        Object unrelatedObject = new Object();
+        Object someObject = new Object();
         assertEquals("", OldSelection.getAgeOrTitle(SomeObject));
     }
 }
