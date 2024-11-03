@@ -8,31 +8,31 @@ public class OldSelection {
 	 * @return if o is not a book, returns an empty string. If o is Comic, returns title,
 	 * if Fiction, returns name, and if TextBook, returns subject.
 	 */
-	public static String getAgeOrTitle(Object o) {
-		if (o instanceof Comic) {
-			return ((Comic) o).getTitle();
-		} else if (o instanceof Fiction) {
-			return ((Fiction) o).getName();
-		} else if (o instanceof TextBook) {
-			return ((TextBook) o).getSubject();
-		}
-		return "";  
-	}	
-
 	// public static String getAgeOrTitle(Object o) {
-    //     return switch (o) {
-    //         case Comic comic -> comic.getTitle();
-    //         case Fiction fiction -> fiction.getName();
-    //         case TextBook textBook -> textBook.getSubject();
-    //         default -> "";
-    //     };
-    // }
+	// 	if (o instanceof Comic) {
+	// 		return ((Comic) o).getTitle();
+	// 	} else if (o instanceof Fiction) {
+	// 		return ((Fiction) o).getName();
+	// 	} else if (o instanceof TextBook) {
+	// 		return ((TextBook) o).getSubject();
+	// 	}
+	// 	return "";  
+	// }	
+
+	public static String getAgeOrTitle(Object o) {
+        return switch (o) {
+            case Comic comic -> comic.getTitle();
+            case Fiction fiction -> fiction.getName();
+            case TextBook textBook -> textBook.getSubject();
+            default -> "";
+        };
+    }
 
 	public static void main(String[] args) {
 		
 		TextBook text = new TextBook("chemistry");
 		Comic comics = new Comic("superman",40);
-		Fiction fic = new Fiction("Goat life", "Benyamin", FictionType.Tragedy);
+		Fiction fic = new Fiction("", "Benyamin", FictionType.Tragedy);
 
 		
 		System.out.println(getAgeOrTitle(text));  
