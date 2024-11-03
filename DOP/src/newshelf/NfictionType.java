@@ -1,6 +1,6 @@
 package newshelf;
 
-public enum NfictionType {
+public enum NfictionType implements IBook{
 
 	Comedy,
 	Tragedy,
